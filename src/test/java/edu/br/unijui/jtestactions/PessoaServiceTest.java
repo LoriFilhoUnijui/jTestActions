@@ -30,6 +30,7 @@ public class PessoaServiceTest {
         System.out.println("addPessoa");
         PessoaModel pessoaModel = PessoaModel.builder().nome("Lori").build();
         
+        pessoaService = new PessoaService();
         pessoaService.addPessoa(pessoaModel);
         
         assertEquals(pessoaService.getPessoas().size(), 1);
@@ -45,6 +46,7 @@ public class PessoaServiceTest {
         String nome = "Lori";
         
         PessoaModel expResult = PessoaModel.builder().nome("LORI").build();
+        pessoaService = new PessoaService();
         pessoaService.addPessoa(expResult);
         
         PessoaModel result = pessoaService.getPessoaByNome(nome);
